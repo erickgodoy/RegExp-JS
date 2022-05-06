@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expresiones Regulares</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="alertifyJS/css/alertify.min.css">
+  <link rel="stylesheet" href="alertifyJS/css/themes/semantic.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="content">
+    <div class="header">
+      <div class="title">
+        <h1>Expresiones Regulares</h1>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" id="ex1">1</a></li>
+          <li><a href="#" id="ex2">2</a></li>
+          <li><a href="#" id="ex3">3</a></li>
+          <li><a href="#" id="ex4">4</a></li>
+          <li><a href="#" id="ex5">5</a></li>
+          <li><a href="#" id="ex6">6</a></li>
+          <li><a href="#" id="ex7">7</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <div id="c-ex1">
+        <p>Hallar Palabras :</p>
+        <div id="texto1">
+          A veces no se pone el interés necesario a los nuevos conocimientos emprendidos por las univerisadades. Parece
+          ser que no se esta logrando comprometer al estudiante a que comprenda el valor del nuevo conocimiento, como
+          manifiesto de la investigación pura, parece ser que la investigación es una palabra que suena bonito y que muy
+          dentro esta hueca y no ha cautivado y muchos menos calado como actividad intrinseca de los señores
+          estudiantes. Entonces nos preguntamos, estamos haciendo lo correcto, o sera que solo estamos ciegos ante
+          nuestra propia creencia, y lo que creemos es lo correcto realmente no lo es, y pretendemos convencer a los
+          estudiantes en aquello que realmente no funciona. Finalmente la investigación no ha llegado a calar en la
+          mente del estudiante, a pesar de nuestro esfuerzos, parece ser que lo estamos haciendo mal, estamos a tiempo
+          de corregirlo, o solo dejaremos que las circunstancias se den aleatoriamente y esperamos el milagro que lo
+          corrija; solo espero ahora que lo que pienso si sea lo correcto.
+        </div>
+        <div class="actions">
+          <input type="text" class="form-control" id="cajaTexto1" />
+          <button class="button" value="Buscar" onclick="Buscar()"><i class="fa fa-search"></i></button>
+        </div>
+
+      </div>
+
+      <div id="c-ex2">
+        <p>Números Telefonicos :</p>
+        <div id="texto2">
+          En este texto se encuentran numeros telefonicos, usted debe tratar de hallarlos, por ejemplo este es un numero
+          telefonico 1-234-567-8901, aquí hay otro 1-234-567-8901 x1234 y este es otro buen ejemplo 1-234-567-8901
+          ext1234, a veces los numeros de telefonos incluyen parentesis, <br> asi 1 (234) 567-8901 y a veces son
+          separados con puntos 1.234.567.8901, es que no hay un numero telefónico más simple que este? 1/234/567/8901 al
+          parecer si mire este ejemplo: 12345678901
+        </div>
+        <div class="actions">
+          <button class="button" value="Buscar" onClick="BuscarNumTelef();">Buscar Números Telefonicos</button>
+        </div>
+      </div>
+
+      <div id="c-ex3">
+        <p>Correos Electronicos :</p>
+        <div id="texto3">
+          Muchas veces dentro de un texto aparecen correos electronicos, la idea@gmail.com es identificarlos, asi
+          algunas cadenas pareceran falsa como esta micorrreo.gmail.com ya que no tiene el simbolo arroba, pero otros si
+          podran ser aceptables como esteCorreo_1@hotmail.com o este otro x_100pre@outlook.es La utilidad de esta
+          busqueda se produce cuando se arrastran datos desde la web por ejemplo, y ahi se pueden hallar correos
+          existentes percyFlores@bcp.com.pe parece institucional o correos como este admin@admin.org e incluso otros de
+          esta forma shihiro@reniec.c, hay muchos pero este no debe ser aceptado @gmail.com menos este correo.@com o
+          este otro gmail@.com
+        </div>
+        <div class="actions">
+          <button class="button" value="Buscar" onClick="BuscarCorreo();">Buscar Correos Electronicos</button>
+        </div>
+      </div>
+
+      <div id="c-ex4">
+        <p>URLs :</p>
+        <div id="texto4">
+          Usted puede visitar la sgte url: http://www.esseguro.com o este otro
+          https://www.estasiesmasseguro.gob/index.html, las urls pueden obviar el protocolo y solo describir el servicio
+          www, este es un claro ejemplo www.unap.edu.pe o este otro www.unap.edu.pe/turoria e incluso a veces tendremos
+          urls como este https://www.youtube.com/watch?v=Tb_2HdsqypI que arrastra datos en la url.
+        </div>
+        <div class="actions">
+          <button class="button" value="Buscar" onClick="BuscarURL();">Buscar URLs</button>
+        </div>
+      </div>
+
+      <div id="c-ex5">
+        <p>Hallar las palabras que comienzan con (sup, enc, mi) :</p>
+        <div id="texto5">
+          Supongamos que en esta frase encontramos palabras como superior o superacion Podriamos decir que este
+          encuentro haria posible un encierro de palabras, lo mismo de mis palabras o algunas que otros misterios.
+        </div>
+        <div class="actions">
+          <input type="text" class="form-control" id="cajaTexto5" />
+          <button class="button" value="Buscar" onClick="BuscarInicio();"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div id="c-ex6">
+        <p>Hallar las palabras que terminan en (mos, as, o) :</p>
+        <div id="texto6">
+          Supongamos que en esta frase encontramos palabras como superior o superacion Podriamos decir que este
+          encuentro haria posible que pensaras lo mismo de las cosas o algunas otras u otros misterios.
+        </div>
+        <div class="actions">
+          <input type="text" class="form-control" id="cajaTexto6" />
+          <button class="button" value="Buscar" onClick="BuscarFinal();"><i class="fa fa-search"></i></button>
+
+        </div>
+      </div>
+      <div id="c-ex7">
+        <p>Hallar los numeros decimales :</p>
+        <div id="texto7">
+          +.98 es un numero decimal? pues claro que lo es, aqui otro ejemplo 10. o 10.0, aqui otro ejemplo -12.12 pero
+          cuidado con estas palabras que los son 1no.00 o .4- o este otro 0.. que no lo sería, y este sí .45
+        </div>
+        <div class="actions">
+          <button class="button" value="Buscar" onClick="BuscarNumDecimal();">Buscar Números Decimales</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="alertifyJS/alertify.min.js"></script>
+  <script src="js/push.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="js/regexp.js"></script>
+  <script type="text/javascript" src="js/filter.js"></script>
+</body>
+
+</html>
